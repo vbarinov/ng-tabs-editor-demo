@@ -1,0 +1,5 @@
+.tabs-editor
+  h1 Tabs Editor
+  ul
+    li(ng-repeat="tab in $ctrl.tabs") {{ tab.label }}
+  button(type="button" ng-click="$ctrl.handleSave()") Save

@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    base(href="/")
+    meta(charset="utf8")
+    title Tabs editor
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+  body
+    #tabs-app(ng-app="tabs-app" ng-class="{'editing': $state.is('app')}")
+      ui-view

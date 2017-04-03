@@ -1,6 +1,6 @@
 class AppController {
-  constructor(tabsService) {
-    this.tabs = tabsService.tabs;
+  constructor(tabsService, activeFilter) {
+    this.tabs = activeFilter(tabsService.tabs);
   }
 }
 

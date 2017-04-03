@@ -1,8 +1,9 @@
 .tabs
-  h1 Tabs displays here
-  nav
-    ul.tabs_nav
-      li(ng-repeat="tab in $ctrl.tabs") {{tab.label}}
-  .tabs_content
-    tab(ng-repeat="tab in $ctrl.tabs" tab="tab")
-  button(type="button" ui-sref="editor") Edit
+  .tabs__container(ng-if="$ctrl.tabs.length")
+    nav
+      ul.tabs-nav
+        li(class="tabs-nav__item" ng-class="{'active': tab.selected}" ng-repeat="tab in $ctrl.tabs")
+          a(href="#" ng-click="$ctrl.selectTab(tab)") {{tab.label}}
+    .tabs-content
+      tab(ng-repeat="tab in $ctrl.tabs" tab="tab")
+  .tabs__notabs(ng-if="!$ctrl.tabs.length") {{ $ctrl.emptyMessage ? $ctrl.emptyMessage : 'No tabs' }}

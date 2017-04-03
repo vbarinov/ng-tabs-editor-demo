@@ -1,12 +1,19 @@
 class TabsEditorController {
   /** @ngInject */
-  constructor($state) {
-    this.$state = $state;
+  constructor() {
+    this.tabs = [];
   }
 
   handleSave() {
     this.onSave({data: this.tabs});
-    this.$state.go('app');
+  }
+
+  handleCancel() {
+    this.onCancel();
+  }
+
+  $onInit() {
+    angular.copy(this.origTabs, this.tabs);
   }
 }
 
@@ -14,7 +21,8 @@ export const TabsEditor = {
   template: require('./TabsEditor.pug'),
   controller: TabsEditorController,
   bindings: {
-    tabs: '<',
-    onSave: '&'
+    origTabs: '<tabs',
+    onSave: '&',
+    onCancel: '&'
   }
 };

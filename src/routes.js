@@ -15,7 +15,11 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'tabsEditor',
       resolve: {
         tabs: tabsService => tabsService.tabs,
-        onSave: tabsService => data => tabsService.saveTabs(data)
+        onSave: ($state, tabsService) => data => {
+          tabsService.saveTabs(data);
+          $state.go('app');
+        },
+        onCancel: $state => () => $state.go('app')
       }
     });
 }

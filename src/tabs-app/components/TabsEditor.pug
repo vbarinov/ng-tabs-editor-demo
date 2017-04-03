@@ -1,5 +1,9 @@
 .tabs-editor
-  h1 Tabs Editor
   ul
-    li(ng-repeat="tab in $ctrl.tabs") {{ tab.label }}
+    li(ng-repeat="tab in $ctrl.tabs")
+      .input-group
+        input(type="checkbox" ng-checked="tab.active" ng-model="tab.active" id="tab-{{ $index }}")
+        label(for="tab-{{ $index }}") {{ tab.label }}
+tabs-footer
   button(type="button" ng-click="$ctrl.handleSave()") Save
+  button(type="button" ng-click="$ctrl.handleCancel()") Cancel

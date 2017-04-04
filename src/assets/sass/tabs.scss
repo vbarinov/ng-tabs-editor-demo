@@ -1,7 +1,6 @@
 #tabs-app {
-  margin: 10% auto 0;
+  margin: 0 auto;
   max-width: 1280px;
-  position: relative;
 }
 
 .tabs-editor {
@@ -72,6 +71,10 @@
     }
   }
 
+  &__container {
+    position: relative;
+  }
+
   nav {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -79,11 +82,14 @@
     box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.02);
 
     .tabs-nav {
+      min-width: 760px;
+
       li {
         float: left;
       }
 
       a {
+        outline: 0;
         font: 13px 'pt_sansbold', sans-serif;
         display: flex;
         justify-content: center;
@@ -132,9 +138,7 @@
 }
 
 .tabs-footer {
-  position: relative;
-  top: 20px;
   width: 100%;
-  margin: 0 auto;
+  margin: 20px auto 0;
   text-align: center;
 }

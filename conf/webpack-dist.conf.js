@@ -50,6 +50,13 @@ module.exports = {
           'html-loader',
           'pug-html-loader'
         ]
+      },
+      {
+        test: /\.(eot|otf|ttf|woff|woff2|svg)$/,
+        include: [
+          path.join(process.cwd(), conf.path.src('assets', 'fonts'))
+        ],
+        loader: 'file-loader?name=assets/fonts/[name].[ext]'
       }
     ]
   },

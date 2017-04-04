@@ -1,0 +1,140 @@
+#tabs-app {
+  margin: 10% auto 0;
+  max-width: 1280px;
+  position: relative;
+}
+
+.tabs-editor {
+  width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.3);
+
+  &__tab {
+    position: relative;
+    font: 18px/3em 'pt_sansbold', sans-serif;
+    padding: 0 15px;
+
+    .input-checkbox {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      outline: 0;
+      width: 32px;
+      height: 32px;
+      margin: auto 0;
+      appearance: none;
+      -webkit-appearance: none;
+      user-select: none;
+    }
+
+    .input-checkbox:after {
+      content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEyOCAxMjg7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojMzFBRjkxO30NCgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9DQo8L3N0eWxlPjxnPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjY0IiBjeT0iNjQiIHI9IjY0Ii8+PC9nPjxnPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik01NC4zLDk3LjJMMjQuOCw2Ny43Yy0wLjQtMC40LTAuNC0xLDAtMS40bDguNS04LjVjMC40LTAuNCwxLTAuNCwxLjQsMEw1NSw3OC4xbDM4LjItMzguMiAgIGMwLjQtMC40LDEtMC40LDEuNCwwbDguNSw4LjVjMC40LDAuNCwwLjQsMSwwLDEuNEw1NS43LDk3LjJDNTUuMyw5Ny42LDU0LjcsOTcuNiw1NC4zLDk3LjJ6Ii8+PC9nPg0KPGc+DQo8Y2lyY2xlIHN0cm9rZT0iIzAwMDAwMCIgaWQ9InN2Z183IiByPSI2MCIgY3k9IjY0IiBjeD0iNjQiIHN0cm9rZS13aWR0aD0iMCIgZmlsbD0iI2ZmZmZmZiIvPg0KPC9nPg0KPC9zdmc+);
+    }
+
+    .input-checkbox:checked:after {
+      content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEyOCAxMjg7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiMzMUFGOTE7fQoJLnN0MXtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPjxnPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjY0IiBjeT0iNjQiIHI9IjY0Ii8+PC9nPjxnPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik01NC4zLDk3LjJMMjQuOCw2Ny43Yy0wLjQtMC40LTAuNC0xLDAtMS40bDguNS04LjVjMC40LTAuNCwxLTAuNCwxLjQsMEw1NSw3OC4xbDM4LjItMzguMiAgIGMwLjQtMC40LDEtMC40LDEuNCwwbDguNSw4LjVjMC40LDAuNCwwLjQsMSwwLDEuNEw1NS43LDk3LjJDNTUuMyw5Ny42LDU0LjcsOTcuNiw1NC4zLDk3LjJ6Ii8+PC9nPjwvc3ZnPg==);
+    }
+
+    .input-checkbox + label {
+      width: 100%;
+      padding-left: 50px;
+      display: inline-block;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &:first-child:after {
+      background-color: transparent;
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+.tabs {
+  width: 100%;
+  margin: 0 auto;
+
+  p {
+    margin: 25px 0 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  nav {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background: $color_tabs_bg;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.02);
+
+    .tabs-nav {
+      li {
+        float: left;
+      }
+
+      a {
+        font: 13px 'pt_sansbold', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        min-width: 90px;
+        padding: 10px;
+        position: relative;
+        text-decoration: none;
+        text-align: center;
+        color: $color_text_dimmed;
+
+        &.active {
+          color: $color_text_black;
+          background: $color_tabs_fg;
+        }
+
+        &:hover {
+          color: $color_text_black;
+          background: $color_tabs_hover;
+        }
+
+        &.active:hover {
+          background: $color_tabs_fg;
+        }
+
+        &.active:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          @include linear-gradient(to left, $color_tabs_grad_from , $color_tabs_grad_to);
+        }
+      }
+    }
+  }
+
+  .tabs-content,  &__notabs {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.3);
+    padding: 20px;
+  }
+}
+
+.tabs-footer {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}

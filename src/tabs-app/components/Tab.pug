@@ -1,2 +1,2 @@
 .tabs-content__tab(ng-show="$ctrl.tab.selected")
-  div {{ $ctrl.tab.content }}
+  div(ng-bind-html="$ctrl.tab.content")

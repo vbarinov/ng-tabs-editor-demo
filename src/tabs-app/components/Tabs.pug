@@ -2,8 +2,8 @@
   .tabs__container(ng-if="$ctrl.tabs.length")
     nav
       ul.tabs-nav
-        li(class="tabs-nav__item" ng-class="{'active': tab.selected}" ng-repeat="tab in $ctrl.tabs")
-          a(href="#" ng-click="$ctrl.selectTab(tab)") {{tab.label}}
+        li(class="tabs-nav__item" ng-repeat="tab in $ctrl.tabs")
+          a(href="#" ng-class="{'active': tab.selected}" ng-click="$ctrl.selectTab(tab)") {{ tab.label }}
     .tabs-content
       tab(ng-repeat="tab in $ctrl.tabs" tab="tab")
-  .tabs__notabs(ng-if="!$ctrl.tabs.length") {{ $ctrl.emptyMessage ? $ctrl.emptyMessage : 'No tabs' }}
+  .tabs__notabs(ng-if="!$ctrl.tabs.length") {{ $ctrl.emptyMessage ? $ctrl.emptyMessage : 'No tabs given' }}

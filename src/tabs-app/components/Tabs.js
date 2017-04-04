@@ -1,6 +1,7 @@
 class TabsController {
   /** @ngInject */
   constructor(tabsService) {
+    this.tabs = [];
     this.tabsService = tabsService;
   }
 
@@ -8,10 +9,18 @@ class TabsController {
     this.tabs = this.tabsService.select(tab, this.tabs);
   }
 
-  $onInit() {
-    if (angular.isDefined(this.tabs) && this.tabs.length) {
+  isNoneSelected() {
+    return !this.tabs.some(tab => angular.isDefined(tab.selected) && tab.selected);
+  }
+
+  selectFirstByDefault() {
+    if (angular.isDefined(this.tabs) && this.tabs.length && this.isNoneSelected()) {
       this.selectTab(this.tabs[0]);
     }
+  }
+
+  $onInit() {
+    this.selectFirstByDefault();
   }
 }
 

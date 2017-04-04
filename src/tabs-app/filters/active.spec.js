@@ -13,8 +13,8 @@ describe('activeFilter', () => {
     angular.mock.module('activeFilter');
   });
 
-  beforeEach(angular.mock.inject(_$filter_ => {
-    filter = _$filter_('active');
+  beforeEach(angular.mock.inject($filter => {
+    filter = $filter('active');
   }));
 
   beforeEach(() => {

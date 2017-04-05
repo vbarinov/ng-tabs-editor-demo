@@ -26,7 +26,8 @@ module.exports = {
         loaders: [
           'style-loader',
           'css-loader',
-          'sass-loader',
+          'resolve-url-loader?keepQuery',
+          'sass-loader?sourceMap',
           'postcss-loader'
         ]
       },
@@ -52,7 +53,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(eot|otf|ttf|woff|woff2|svg)$/,
+        test: /\.(eot|otf|ttf|woff|woff2)$/,
         include: [
           path.join(process.cwd(), conf.path.src('assets', 'fonts'))
         ],

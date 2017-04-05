@@ -17,7 +17,6 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         tabs: tabsService => tabsService.tabs,
         onSave: ($state, tabsService) => {
           return [`data`, data => {
-            console.log('router onSave', data);
             tabsService.saveTabs(data);
             $state.go('app');
           }];

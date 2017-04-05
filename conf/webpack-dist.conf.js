@@ -27,7 +27,7 @@ module.exports = {
         test: /\.(css|scss)$/,
         loaders: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader?minimize!sass-loader!postcss-loader'
+          use: 'css-loader?minimize!resolve-url-loader?keepQuery!sass-loader?sourceMap!postcss-loader'
         })
       },
       {
@@ -52,11 +52,12 @@ module.exports = {
         ]
       },
       {
-        test: /\.(eot|otf|ttf|woff|woff2|svg)$/,
+        test: /\.(eot|otf|ttf|woff|woff2)$/,
         include: [
           path.join(process.cwd(), conf.path.src('assets', 'fonts'))
         ],
-        loader: 'file-loader?name=assets/fonts/[name].[ext]'
+        // don't code like this
+        loader: 'file-loader?name=[name].[ext]&publicPath=../../&outputPath=assets/fonts/'
       }
     ]
   },
@@ -71,7 +72,7 @@ module.exports = {
       output: {comments: false},
       compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
     }),
-    new ExtractTextPlugin('index-[contenthash].css'),
+    new ExtractTextPlugin('assets/css/index-[contenthash].css'),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
     new webpack.LoaderOptionsPlugin({
       options: {
@@ -81,7 +82,7 @@ module.exports = {
   ],
   output: {
     path: path.join(process.cwd(), conf.paths.dist),
-    filename: '[name]-[hash].js'
+    filename: 'assets/js/[name]-[hash].js'
   },
   entry: {
     app: `./${conf.path.src('index')}`,

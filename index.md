@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
+# Tabs editor module demo
+Component-based editable tabs module for `angular 1.6`
 
-You can use the [editor on GitHub](https://github.com/vbarinov/ng-tabs-editor-demo/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Installation & usage
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Install
 
-### Markdown
+1. `npm install`
+2. `npm install -g gulp-cli` - if you don't have gulp
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Run server (includes building)
+* `gulp serve` or `npm run serve` - development server with auto-refresh
+* `gulp serve:dist` or `npm run serve:dist` - development server, serving from dist
 
-```markdown
-Syntax highlighted code block
+### Build
+Run `gulp build` or `npm run build` command. Builded files will be in `dist` directory
 
-# Header 1
-## Header 2
-### Header 3
+### Test
+For continious watch task use `gulp test:auto` or `npm run test:auto`
 
-- Bulleted
-- List
+For single test run use `gulp test` or `npm run test`.
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+## Dependencies
 
-[Link](url) and ![Image](src)
-```
+* `angular 1.6.2`
+* `angular-ui-router 1.0.0-rc.1`
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Features
 
-### Jekyll Themes
+- [x] It works :)
+- [x] Mobile friendly
+- [ ] CRUD
+- [ ] Reusability
+- [ ] Theming
+- [ ] UI configuration
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/vbarinov/ng-tabs-editor-demo/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Credits
 
-### Support or Contact
+* Author: [Vlad Barinov](https://twitter.com/jimkakain)
+* Svg checkbox icon by By [Juliia Osadcha](https://www.iconfinder.com/Juliia_Os)
+* Scaffolded with [FontainJS generator](https://github.com/FountainJS/generator-fountain-webapp)
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## License
+
+[Unlicense](http://unlicense.org/UNLICENSE)

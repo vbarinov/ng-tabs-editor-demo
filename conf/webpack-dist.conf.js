@@ -65,7 +65,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     FailPlugin,
     new HtmlWebpackPlugin({
-      template: conf.path.src('index.html')
+      template: conf.path.src('index.pug')
     }),
     new webpack.optimize.UglifyJsPlugin({
       output: {comments: false},

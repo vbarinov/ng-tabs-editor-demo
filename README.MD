@@ -1,6 +1,8 @@
 # Tabs editor module demo
 Component-based editable tabs module for `angular 1.6`
 
+## [Demo](https://vbarinov.github.io/ng-tabs-editor-demo/)
+
 ## Installation & usage
 
 ### Install

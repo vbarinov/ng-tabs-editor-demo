@@ -1,5 +1,5 @@
 class TabController {
-  /** ngInject */
+  /** @ngInject */
   constructor($sce) {
     this.$sce = $sce;
   }
